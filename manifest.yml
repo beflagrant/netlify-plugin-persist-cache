@@ -1,5 +1,8 @@
-name: netlify-plugin-jekyll-cache
+name: netlify-plugin-persist-cache
 inputs:
-  - name: jekyllSource
-    description: The Jekyll source directory
+  - name: source
+    description: The source directory
     default: '.'
+  - name: cacheFolder
+    description: The folder inside the source to be cached
+    default: '.jekyll-cache'

@@ -1,22 +1,26 @@
 {
-  "name": "netlify-plugin-jekyll-cache",
+  "name": "@beflagrant/netlify-plugin-persist-cache",
   "version": "1.0.0",
-  "description": "Persist the Jekyll cache between Netlify builds",
+  "description": "Persist the cache between Netlify builds",
   "main": "index.js",
-  "repository": "https://github.com/Mesomorphic/netlify-plugin-jekyll-cache.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beflagrant/netlify-plugin-persist-cache.git"
+  },
   "keywords": [
     "netlify",
     "netlify-plugin",
-    "jekyll"
+    "cache",
+    "jekyll",
+    "bridgetown"
   ],
-  "author": {
-    "name": "Matthew Simpson",
-    "email": "matthew@mesomorphic.co.uk",
-    "url": "https://www.mesomorphic.co.uk"
-  },
+  "author": "Jim Remsik <jim@beflagrant.com> (https://www.beflagrant.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Mesomorphic/netlify-plugin-jekyll-cache/issues"
+    "url": "https://github.com/beflagrant/netlify-plugin-persist-cache/issues"
   },
-  "homepage": "https://github.com/Mesomorphic/netlify-plugin-jekyll-cache#readme"
+  "homepage": "https://github.com/beflagrant/netlify-plugin-persist-cache#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

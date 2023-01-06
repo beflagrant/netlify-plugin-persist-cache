@@ -1,21 +1,21 @@
-const cacheDir = (constants, jekyllSource) => [
+const cacheDir = (constants, source) => [
   constants.PUBLISH_DIR,
-  `${jekyllSource}/.jekyll-cache`,
+  `${source}/.bridgetown-cache`,
 ];
 
 module.exports = {
   async onPreBuild({ constants, inputs, utils }) {
-    if (await utils.cache.restore(cacheDir(constants, inputs.jekyllSource))) {
-      console.log('Restoring Jekyll cache');
+    if (await utils.cache.restore(cacheDir(constants, inputs.source))) {
+      console.log('Restoring persisted cache');
     } else {
-      console.log('No Jekyll cache found. Skipping');
+      console.log('No persisted cache found. Skipping');
     }
   },
   async onPostBuild({ constants, inputs, utils }) {
-    if (await utils.cache.save(cacheDir(constants, inputs.jekyllSource))) {
-      console.log('Jekyll cache stored');
+    if (await utils.cache.save(cacheDir(constants, inputs.source))) {
+      console.log('Cache persisted');
     } else {
-      console.log('Jekyll cache was not found. Please check your config for this plugin');
+      console.log('No cache was found. Please check your config for this plugin');
     }
   },
 };
