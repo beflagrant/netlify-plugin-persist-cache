@@ -4,9 +4,7 @@ Speed up deploys by caching your previous build cache, so you only need to build
 
 ## Installation
 
-You can install this plugin directly via the Netlify UI [here](https://app.netlify.com/teams/madhatter2099/plugins/netlify-plugin-jekyll-cache/install).
-
-If you don't want to use the UI then you can install the plugin using npm. Add the plugin as a development dependency:
+Add the plugin as a development dependency:
 
 ```
 npm install -D netlify-plugin-persist-cache
@@ -25,7 +23,8 @@ Add the following to your `netlify.toml`:
   package = "netlify-plugin-persist-cache"
   
   [plugins.inputs]
-  # only required if cacheFolder is not in the root directory of your repository
-  source = "/jekyll" 
-  cacheFolder = ".jekyll-cache"
+  source = "/output" 
+  cacheFolder = ".bridgetown-cache"
 ```
+
+`source` need only be set if it is not the root of your repository and `cacheFolder` is relative to the `source`.
